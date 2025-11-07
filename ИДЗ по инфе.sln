@@ -1,31 +1,62 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36518.9 d17.14
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ИДЗ по инфе", "ИДЗ по инфе\ИДЗ по инфе.vcxproj", "{029C266D-6720-41F0-AE16-8AFBC9AC6705}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{029C266D-6720-41F0-AE16-8AFBC9AC6705}.Debug|x64.ActiveCfg = Debug|x64
-		{029C266D-6720-41F0-AE16-8AFBC9AC6705}.Debug|x64.Build.0 = Debug|x64
-		{029C266D-6720-41F0-AE16-8AFBC9AC6705}.Debug|x86.ActiveCfg = Debug|Win32
-		{029C266D-6720-41F0-AE16-8AFBC9AC6705}.Debug|x86.Build.0 = Debug|Win32
-		{029C266D-6720-41F0-AE16-8AFBC9AC6705}.Release|x64.ActiveCfg = Release|x64
-		{029C266D-6720-41F0-AE16-8AFBC9AC6705}.Release|x64.Build.0 = Release|x64
-		{029C266D-6720-41F0-AE16-8AFBC9AC6705}.Release|x86.ActiveCfg = Release|Win32
-		{029C266D-6720-41F0-AE16-8AFBC9AC6705}.Release|x86.Build.0 = Release|Win32
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {EFA521A7-093B-4DC1-BF4A-181BBA9B832D}
-	EndGlobalSection
-EndGlobal
+﻿// Тест2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+//
+
+#include <iostream>
+float RUB, USD, CNY, EUR;
+int value1, value2;
+using namespace std;
+int main()
+{
+    setlocale(LC_ALL, "");
+    cout << ("Введите номер валюты, которую хотите перевести в USD (RUB = 1, USD = 2, CNY = 3, EUR = 4)") << endl;
+    cin >> value1;
+    cout << ("Введите сумму ");
+    if (value1 == 1) 
+    {
+        cin >> RUB;
+        USD = RUB / 83.2;
+        cout << "У вас " << USD << " доллара(ов)" << endl;
+    }
+    if (value1 == 2) 
+    {
+        cin >> USD;
+        cout << "У вас " << USD << " доллара(ов)" << endl;
+    }
+    if (value1 == 3)
+    {
+        cin >> CNY;
+        USD = CNY / 7.2;
+        cout << "У вас " << USD << " доллара(ов)" << endl;
+    }
+    if (value1 == 4)
+    {
+        cin >> EUR;
+        USD = EUR / 0.85;
+        cout << "У вас " << USD << " доллара(ов)" << endl;
+    }
+
+    cout << "Введите номер валюты, которую хотите получить (RUB = 1, USD = 2, CNY = 3, EUR = 4)" << endl;
+    cin >> value2;
+    if (value2 == 1)
+    {
+        RUB = USD * 85.3;
+        cout << "У вас " << RUB << " рубля(ей)" << endl;
+    }
+    if (value2 == 2)
+    {
+        cout << "У вас " << USD << " доллара(ов)" << endl;
+    }
+    if (value2 == 3)
+    {
+        CNY = USD * 7.2;
+        cout << "У вас " << CNY << " юаня(ей)" << endl;
+    }
+    if (value2 == 4)
+    {
+        EUR = USD * 1.17;
+        cout << "У вас " << EUR << " евро" << endl;
+    }
+
+}
+
+
