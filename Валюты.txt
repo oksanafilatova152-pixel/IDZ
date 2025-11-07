@@ -1,4 +1,4 @@
-# Формат: код_валюты название_валюты
+
 CURRENCIES
 1 RUB
 2 USD  
@@ -6,7 +6,7 @@ CURRENCIES
 4 EUR
 END_CURRENCIES
 
-# Формат: из_валюты в_валюту курс
+
 RATES
  0.01176
  0.08000
@@ -21,4 +21,5 @@ RATES
  1.16279
  8.33333
 END_RATES
+
 
