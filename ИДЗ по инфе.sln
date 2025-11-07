@@ -77,7 +77,7 @@ int main() {
    
 
     std::ifstream inputFile("Валюты.txt"); 
-    double exchange_rate_eur_to_usd = std::ifstream inputFile.getline(Валюты, 21);
+    double exchange_rate_eur_to_usd = std::ifstream inputFile.getline(Валюты, ;
     if (!inputFile.is_open()) {
         std::cerr << "Ошибка! Файл Валюты.txt не найден." << std::endl;
         return 1; 
