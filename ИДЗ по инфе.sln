@@ -1,62 +1,30 @@
-﻿// Тест2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
+#include <iostream> 
+#include <fstream> 
+#include <iomanip>  
+int main() {
 
-#include <iostream>
-float RUB, USD, CNY, EUR;
-int value1, value2;
-using namespace std;
-int main()
-{
-    setlocale(LC_ALL, "");
-    cout << ("Введите номер валюты, которую хотите перевести в USD (RUB = 1, USD = 2, CNY = 3, EUR = 4)") << endl;
-    cin >> value1;
-    cout << ("Введите сумму ");
-    if (value1 == 1) 
-    {
-        cin >> RUB;
-        USD = RUB / 83.2;
-        cout << "У вас " << USD << " доллара(ов)" << endl;
-    }
-    if (value1 == 2) 
-    {
-        cin >> USD;
-        cout << "У вас " << USD << " доллара(ов)" << endl;
-    }
-    if (value1 == 3)
-    {
-        cin >> CNY;
-        USD = CNY / 7.2;
-        cout << "У вас " << USD << " доллара(ов)" << endl;
-    }
-    if (value1 == 4)
-    {
-        cin >> EUR;
-        USD = EUR / 0.85;
-        cout << "У вас " << USD << " доллара(ов)" << endl;
+   
+
+    std::ifstream inputFile("Валюты.txt"); 
+    double exchange_rate_eur_to_usd = std::ifstream inputFile.getline(Валюты, ;
+    if (!inputFile.is_open()) {
+        std::cerr << "Ошибка! Файл Валюты.txt не найден." << std::endl;
+        return 1; 
     }
 
-    cout << "Введите номер валюты, которую хотите получить (RUB = 1, USD = 2, CNY = 3, EUR = 4)" << endl;
-    cin >> value2;
-    if (value2 == 1)
-    {
-        RUB = USD * 85.3;
-        cout << "У вас " << RUB << " рубля(ей)" << endl;
-    }
-    if (value2 == 2)
-    {
-        cout << "У вас " << USD << " доллара(ов)" << endl;
-    }
-    if (value2 == 3)
-    {
-        CNY = USD * 7.2;
-        cout << "У вас " << CNY << " юаня(ей)" << endl;
-    }
-    if (value2 == 4)
-    {
-        EUR = USD * 1.17;
-        cout << "У вас " << EUR << " евро" << endl;
+    double amount_eur;
+
+    if (inputFile >> amount_eur) 
+        double amount_usd = amount_eur * exchange_rate_eur_to_usd;
+        
+        std::cout << std::fixed << std::setprecision(2);
+
+        std::cout << amount_eur << " EUR = " << amount_usd << " USD" << std::endl;
+    } else {
+        std::cerr << "Ошибка чтения числа из файла. Проверьте содержимое." << std::endl;
     }
 
+    inputFile.close(); 
+
+    return 0; 
 }
-
-
